@@ -3,6 +3,8 @@ name: Build and Push to GHCR
 on:
   push:
     branches: [ main ]
+  schedule:
+    - cron: '0 4 * * 1'  # minute hour day-of-month month day-of-week (1 = Monday)
   workflow_dispatch:
 
 jobs:
