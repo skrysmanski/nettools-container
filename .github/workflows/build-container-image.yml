@@ -50,8 +50,10 @@ jobs:
           #   There should be no point in using an older image. Also, this way we don't need to cleanup old images.
           tags:  ${{ vars.DOCKERHUB_USERNAME }}/${{ env.CONTAINER_NAME }}:latest
 
+      # Uses the repo's README to update the overview on DockerHub.
+      # NOTE: Requires a Docker Hub token with "Read, Write, Delete" rights.
       - name: Update Docker Hub description
-        uses: peter-evans/dockerhub-description@v4
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01 # v4.0.2
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
