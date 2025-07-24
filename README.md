@@ -2,6 +2,8 @@
 
 This container provides various network tools that can be used to diagnose network problems.
 
+This image is available both for x64 (amd64) and ARM (arm64).
+
 ## Kubernetes
 
 To use this image in Kubernetes, use:
