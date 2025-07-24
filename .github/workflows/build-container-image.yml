@@ -43,4 +43,6 @@ jobs:
         context: .
         platforms: linux/amd64,linux/arm64
         push: true
+        # NOTE: We only use "latest" as tag as users will always want to use the latest (and thus only) image.
+        #   There should be no point in using an older image. Also, this way we don't need to cleanup old images.
         tags: ghcr.io/${{ github.repository_owner }}/${{ env.CONTAINER_NAME }}:latest
